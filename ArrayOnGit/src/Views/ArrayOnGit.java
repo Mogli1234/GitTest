@@ -16,7 +16,12 @@ public class ArrayOnGit {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        int num;
+        String roque_roxana;
         System.out.print("pelos");
+        System.out.print ("hola a todos");
+        System.out.println("hola Marlen I will love you ever ");
+        System.out.println ("Practicando git");
     }
     
 }
