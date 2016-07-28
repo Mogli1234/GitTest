@@ -5,6 +5,8 @@
  */
 package Views;
 
+import Logic.Arrays;
+
 /**
  *
  * @author Mogli
@@ -22,6 +24,11 @@ public class ArrayOnGit {
         System.out.print ("hola a todos");
         System.out.println("hola Marlen I will love you ever ");
         System.out.println ("Practicando git");
+        
+        Arrays clArray = new Arrays();
+        
+        clArray.FillArray(4);
+        System.out.println(clArray.ShowArray());
     }
     
 }
