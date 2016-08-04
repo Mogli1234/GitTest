@@ -32,6 +32,7 @@ public class MainView extends javax.swing.JFrame {
         btnFirstW = new javax.swing.JButton();
         btnSecondW = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
+        btnTxtExample = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,6 +60,13 @@ public class MainView extends javax.swing.JFrame {
             }
         });
 
+        btnTxtExample.setText("Example With Txt File");
+        btnTxtExample.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTxtExampleActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -66,12 +74,12 @@ public class MainView extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(89, 89, 89)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(btnSecondW, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnExit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnFirstW))
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(126, Short.MAX_VALUE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
+                    .addComponent(btnSecondW, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnFirstW, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnTxtExample, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnExit, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(126, 126, 126))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -80,11 +88,13 @@ public class MainView extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnFirstW)
-                .addGap(30, 30, 30)
+                .addGap(18, 18, 18)
                 .addComponent(btnSecondW)
-                .addGap(36, 36, 36)
+                .addGap(24, 24, 24)
+                .addComponent(btnTxtExample)
+                .addGap(18, 18, 18)
                 .addComponent(btnExit)
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
 
         pack();
@@ -109,6 +119,13 @@ public class MainView extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btnSecondWActionPerformed
 
+    private void btnTxtExampleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTxtExampleActionPerformed
+        // TODO add your handling code here:
+        ExampleTxT txt = new ExampleTxT();
+        txt.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_btnTxtExampleActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -118,6 +135,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnFirstW;
     private javax.swing.JButton btnSecondW;
+    private javax.swing.JButton btnTxtExample;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
