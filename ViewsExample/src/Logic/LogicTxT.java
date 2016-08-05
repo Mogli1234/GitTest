@@ -11,6 +11,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -24,10 +25,13 @@ public class LogicTxT {
     String fileName;
     String lineTxt = null;
     String[] toFile = {"","",""};
+    ArrayList<Data> myList;
+    Data[] array = new Data [4];
 
     public LogicTxT() {
         this.txtText = new String[15];
         this.fileName = "C:\\Users\\Mogli\\Documents\\GitTest\\ViewsExample\\src\\Files\\exampleTxT.txt";
+        this.myList = new ArrayList<Data>();
         
     }
 
@@ -98,4 +102,34 @@ public class LogicTxT {
         this.toFile[2]="";
     }
     //</editor-fold>
+    
+    public void addInfo(Data pato){
+        try {
+            if (this.array[0]==null) {
+                this.array[0] = new Data();
+                this.array[0].ID = pato.ID;
+                this.array[0].nombre = pato.nombre;  
+            } else if (this.array[1] ==null) {
+                this.array[1] = new Data();
+                this.array[1].ID = pato.ID;
+                this.array[1].nombre = pato.nombre; 
+            } else if (this.array[2] ==null) {
+                this.array[2] = pato;
+            }else if(this.array[3] == null){
+                this.array[3] = pato;
+            }
+        } catch (Exception e) {
+            e.getMessage();
+        }
+    }
+    
+    public String hola(String nombre){
+        String message = "";
+        for (int i = 0; i < this.array.length; i++) {
+            if (this.array[i].nombre.equals(nombre)) {
+                message = "holaaa";
+            }
+        }
+        return message;
+    }
 }

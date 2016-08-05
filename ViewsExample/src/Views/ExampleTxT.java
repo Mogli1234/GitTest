@@ -5,10 +5,9 @@
  */
 package Views;
 
+import Logic.Data;
 import Logic.LogicTxT;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -17,6 +16,7 @@ import javax.swing.JOptionPane;
  */
 public class ExampleTxT extends javax.swing.JFrame {
 LogicTxT logic = new LogicTxT();
+Data dt = new Data();
     /**
      * Creates new form ExampleTxT
      */
@@ -40,6 +40,9 @@ LogicTxT logic = new LogicTxT();
         txtToTxt = new javax.swing.JTextArea();
         btnSave = new javax.swing.JButton();
         btnExportData = new javax.swing.JButton();
+        txtId = new javax.swing.JTextField();
+        txtData = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,6 +78,13 @@ LogicTxT logic = new LogicTxT();
             }
         });
 
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -95,6 +105,14 @@ LogicTxT logic = new LogicTxT();
                         .addComponent(btnReturn, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(63, 63, 63)
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -111,7 +129,12 @@ LogicTxT logic = new LogicTxT();
                         .addComponent(btnExportData)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addComponent(btnChargeArray)
-                .addGap(85, 85, 85)
+                .addGap(32, 32, 32)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
+                .addGap(27, 27, 27)
                 .addComponent(btnReturn)
                 .addGap(25, 25, 25))
         );
@@ -150,13 +173,25 @@ LogicTxT logic = new LogicTxT();
         }
     }//GEN-LAST:event_btnExportDataActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        this.dt.ID = txtId.getText();
+        this.dt.nombre = txtData.getText();
+        this.logic.addInfo(dt);
+        txtData.setText("");
+        txtId.setText("");
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnChargeArray;
     private javax.swing.JButton btnExportData;
     private javax.swing.JButton btnReturn;
     private javax.swing.JButton btnSave;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField txtData;
+    private javax.swing.JTextField txtId;
     private javax.swing.JTextArea txtToTxt;
     // End of variables declaration//GEN-END:variables
 }
